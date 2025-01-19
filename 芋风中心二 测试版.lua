@@ -109,16 +109,15 @@ bin:Label("你的用户名:"..game.Players.LocalPlayer.Name)
 bin:Label("你的注入器:"..identifyexecutor())
 bin:Label("服务器id:"..game.GameId)
 
-about:Label("作者回响")
-about:Label("作者师傅L靓坤")
-about:Label("作者qq3240325167")
+about:Label("作者神不如风")
+about:Label("作者qq2629483822")
 about:Label("正在努力优化")
 about:Label("请见谅")
 about:Button("复制作者QQ", function()
-    setclipboard("3240325167")
+    setclipboard("2629483822")
 end)
 about:Button("复制QQ群", function()
-    setclipboard("364494103")
+    setclipboard("1012568663")
 end)
 about:Toggle("移除UI辉光", "DHG", false, function(DHG)
     if DHG then
@@ -744,10 +743,9 @@ FE:Button("FE", function()
     loadstring(game:HttpGet('https://pastefy.ga/a7RTi4un/raw'))()
 end)
 
-NE:Label("作者回响")
-NE:Label("作者师傅L靓坤")
-NE:Label("功能不太多")
-NE:Label("那些无脑的人")
+NE:Label("神不如风")
+NE:Label("缝合脚本")
+NE:Label("完全免费")
 NE:Label("不要喷我")
 NE:Label("谢谢您")
 NE:Label("使用了我的脚本")
@@ -859,154 +857,4 @@ end)
 Tab2:Button("传送油桶4", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(69.48390197753906, 105.25657653808594, 3434.9033203125)
 end)
-    local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/atoyayaya/REDz-ui/refs/heads/main/REDzGui"))()
-
-    local Window = redzlib:MakeWindow({
-  Title = "芋风中心",
-  SubTitle = "忍者传奇",
-  SaveFolder = "Redz Config"
-})
-
-print("反挂机已开启")
-Start = tick()
-		local vu = game:GetService("VirtualUser")
-		game:GetService("Players").LocalPlayer.Idled:connect(function()
-		   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-		   wait(1)
-		   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-		end)
-
-Window:AddMinimizeButton({
-  Button = { Image = redzlib:GetIcon("close"), BackgroundTransparency = 0,Size = UDim2.fromOffset(60, 60), },
-  Corner = { CornerRadius = UDim.new(0, 10) }
-})
-
-    local day = game.Players.LocalPlayer.AccountAge
-    local week = (day / 7)
-    local mouth = (day / 30)
-    local year = (day / 365)
-
-    local Tab = Window:MakeTab({"公告", "cool"})
-Tab:AddSection("脚本默认开启反挂机，请放心挂机")
-
-    local Tab = Window:MakeTab({"个人信息", "cool"})
-
-    local Section = Tab:AddSection("注册时间:"..day.."天")
-
-    local Section = Tab:AddSection("注册时间:"..week.."星期")
-
-    local Section = Tab:AddSection("注册时间:"..mouth.."月")
-
-    local Section = Tab:AddSection("注册时间:"..year.."年")
-
-    local Section = Tab:AddSection("服务器id:"..game.GameId)
-
-    local Section = Tab:AddSection("用户id:"..game.Players.LocalPlayer.UserId)
-
-    local Section = Tab:AddSection("客户端id:"..game:GetService("RbxAnalyticsService"):GetClientId())
-
-    local Section = Tab:AddSection("注入器:"..identifyexecutor())
-
-    local Section = Tab:AddSection("用户名:"..game.Players.LocalPlayer.Character.Name)
-
-    local Section = Tab:AddSection("服务器名称:"..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name)
-
-    local Tab = Window:MakeTab({"自动功能", "cool"})
-
-_G.auto_swing = true
-
-function auto_swing()
-	while _G.auto_swing == true do
-	wait()
-	if game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart") then
-if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") then 
-game.Players.LocalPlayer.ninjaEvent:FireServer("swingKatana")
-else
-for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do 
-if v.ClassName == "Tool" and v:FindFirstChild("attackShurikenScript") then 
-game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
-wait()
-if v.ClassName == "Tool" and v:FindFirstChild("attackKatanaScript") then 
-game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)                            
-end
-end
-end
-end
-end
-	end
-end	
-
-Tab:AddToggle({
-  Name = "自动挥剑",  
-  Default = false,
-  Callback = function(Value)
-    _G.auto_swing = Value
-        auto_swing()
-  end
-})
-
-_G.auto_sell = true
-
-function auto_sell()
-	while _G.auto_sell == true do
-	wait()
-	game:GetService("Workspace").sellAreaCircles["sellAreaCircle16"].circleInner.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame wait(0.1) game:GetService("Workspace").sellAreaCircles["sellAreaCircle16"].circleInner.CFrame = CFrame.new(0,0,0)
-	end
-end	
-
-Tab:AddToggle({
-  Name = "自动出售",  
-  Default = false,
-  Callback = function(Value)
-    _G.auto_sell = Value
-        auto_sell()
-  end
-})
-
-local Section = Tab:AddSection("自动购买")
-
-_G.auto_buysw = true
-
-function auto_buysw()
-	while _G.auto_buysw == true do
-	wait(0.5)
-	if game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart") then
-local oh1 = "buyAllSwords"
-local oh2 = {"Ground", "Astral Island", "Space Island","Tundra Island", "Eternal Island", "Sandstorm","Thunderstorm", "Ancient Inferno Island", "Midnight Shadow Island", "Mythical Souls Island", "Winter Wonder Island","Blazing Vortex Island","Chaos Legends Island","Cybernetic Legends Island","Skystorm Ultraus Island","Inner Peace Island","Dragon Legend Island","Golden Master Island","Dragon Legend Island","Soul Fusion Island"}
-for i = 1,#oh2 do
-game:GetService("Players").LocalPlayer.ninjaEvent:FireServer(oh1, oh2[i])
-end
-end
-	end
-end	
-
-Tab:AddToggle({
-  Name = "剑",  
-  Default = false,
-  Callback = function(Value)
-    _G.auto_buysw = Value
-        auto_buysw()
-  end
-})
-
-local Tab = Window:MakeTab({"修改数据", "cool"})
-
-Tab:AddButton({"解锁所有通行证", function()
-game:GetService("ReplicatedStorage").gamepassIds["+2 Pet Slots"].Parent = game.Players.LocalPlayer.ownedGamepasses
-game:GetService("ReplicatedStorage").gamepassIds["+3 Pet Slots"].Parent = game.Players.LocalPlayer.ownedGamepasses
-game:GetService("ReplicatedStorage").gamepassIds["+4 Pet Slots"].Parent = game.Players.LocalPlayer.ownedGamepasses
-game:GetService("ReplicatedStorage").gamepassIds["+100 Capacity"].Parent = game.Players.LocalPlayer.ownedGamepasses
-game:GetService("ReplicatedStorage").gamepassIds["+200 Capacity"].Parent = game.Players.LocalPlayer.ownedGamepasses
-game:GetService("ReplicatedStorage").gamepassIds["+20 Capacity"].Parent = game.Players.LocalPlayer.ownedGamepasses
-game:GetService("ReplicatedStorage").gamepassIds["+60 Capacity"].Parent = game.Players.LocalPlayer.ownedGamepasses
-game:GetService("ReplicatedStorage").gamepassIds["Infinite Ammo"].Parent = game.Players.LocalPlayer.ownedGamepasses
-game:GetService("ReplicatedStorage").gamepassIds["Infinite Ninjitsu"].Parent = game.Players.LocalPlayer.ownedGamepasses
-game:GetService("ReplicatedStorage").gamepassIds["Permanent Islands Unlock"].Parent = game.Players.LocalPlayer.ownedGamepasses
-game:GetService("ReplicatedStorage").gamepassIds["x2 Coins"].Parent = game.Players.LocalPlayer.ownedGamepasses
-game:GetService("ReplicatedStorage").gamepassIds["x2 Damage"].Parent = game.Players.LocalPlayer.ownedGamepasses
-game:GetService("ReplicatedStorage").gamepassIds["x2 Health"].Parent = game.Players.LocalPlayer.ownedGamepasses
-game:GetService("ReplicatedStorage").gamepassIds["x2 Ninjitsu"].Parent = game.Players.LocalPlayer.ownedGamepasses
-game:GetService("ReplicatedStorage").gamepassIds["x2 Speed"].Parent = game.Players.LocalPlayer.ownedGamepasses
-game:GetService("ReplicatedStorage").gamepassIds["Faster Sword"].Parent = game.Players.LocalPlayer.ownedGamepasses
-game:GetService("ReplicatedStorage").gamepassIds["x3 Pet Clones"].Parent = game.Players.LocalPlayer.ownedGamepasses
-end})
+    credits:Textbox("自定义头部大小", "arg", "输入",function(Value)_G.HeadSize = Value_G.Disabled = truegame:GetService('RunService').RenderStepped:connect(function()if _G.Disabled thenfor i,v in next, game:GetService('Players'):GetPlayers() doif v.Name ~= game:GetService('Players').LocalPlayer.Name thenpcall(function()v.Character.Head.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)v.Character.Head.Transparency = 1v.Character.Head.BrickColor = BrickColor.new("Red")v.Character.Head.Material = "Neon"v.Character.Head.CanCollide = falsev.Character.Head.Massless = trueend)endendendend)    end) 
